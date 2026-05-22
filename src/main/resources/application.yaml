@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: oms
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${DATABASE_HOST:localhost}:${DATABASE_PORT:3306}/${DATABASE_NAME:oms}
+    username: test
+    password: Test@123
+  jpa:
+    hibernate:
+      format_sql: ${HIBERNATE_FORMAT_SQL:true}
+      ddl-auto: update
+    show-sql: ${JPA_SHOW_SQL:true}
