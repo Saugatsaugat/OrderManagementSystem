@@ -37,6 +37,12 @@
     <logger name="org.hibernate" level="WARN"/>
 
     <!--    PROFILES-->
+    <springProfile name="default">
+        <root level="INFO">
+            <appender-ref ref="CONSOLE"/>
+        </root>
+    </springProfile>
+
     <springProfile name="dev">
         <root level="DEBUG">
             <appender-ref ref="CONSOLE"/>
