@@ -9,7 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v1/phone")
 public class PhoneController extends AbstractController<PhoneVo, Long> {
 
-    private IService<PhoneVo, Long> service;
+    private final IService<PhoneVo, Long> service;
+
+    public PhoneController(IService<PhoneVo, Long> service) {
+        this.service = service;
+    }
 
     @Override
     protected IService<PhoneVo, Long> getService() {

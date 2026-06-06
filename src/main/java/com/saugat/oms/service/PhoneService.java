@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class PhoneService extends AbstractService<Phone, PhoneVo, Long> {
 
-    private IBaseRepository<Phone, Long> repository;
-    private IBaseMapper<Phone, PhoneVo> mapper;
+    private final IBaseRepository<Phone, Long> repository;
+    private final IBaseMapper<Phone, PhoneVo> mapper;
 
     public PhoneService(IBaseRepository<Phone, Long> repository, IBaseMapper<Phone, PhoneVo> mapper) {
         this.repository = repository;
