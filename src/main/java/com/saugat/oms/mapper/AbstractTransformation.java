@@ -10,6 +10,6 @@ public abstract class AbstractTransformation {
 
     @Named("userTransformation")
     public UserDto userTransformation(User user){
-        return user == null ? null : new UserDto(user.getId(), null, null, null);
+        return user == null ? null : new UserDto(user.getId(), null, null, null, null, null);
     }
 }
