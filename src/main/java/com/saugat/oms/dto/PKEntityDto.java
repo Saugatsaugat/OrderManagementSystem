@@ -1,17 +1,17 @@
-package com.saugat.oms.wrapper;
+package com.saugat.oms.dto;
 
 import java.io.Serializable;
 
-public class PKEntityVo implements Serializable {
+public class PKEntityDto implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     private Long id;
 
-    public PKEntityVo() {
+    public PKEntityDto() {
     }
 
-    public PKEntityVo(Long id) {
+    public PKEntityDto(Long id) {
         this.id = id;
     }
 

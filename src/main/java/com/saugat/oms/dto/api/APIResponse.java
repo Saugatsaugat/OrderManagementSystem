@@ -1,4 +1,4 @@
-package com.saugat.oms.wrapper.api;
+package com.saugat.oms.dto.api;
 
 /*
 This will return success and failed api responses.

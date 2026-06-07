@@ -1,8 +1,8 @@
-package com.saugat.oms.wrapper;
+package com.saugat.oms.dto;
 
 import java.time.Instant;
 
-public class EntityChangeTrackerVo extends PKEntityVo {
+public class EntityChangeTrackerDto extends PKEntityDto {
     private static final long serialVersionUID = 1L;
 
     private Instant createdAt;
@@ -10,9 +10,9 @@ public class EntityChangeTrackerVo extends PKEntityVo {
     private String createdBy;
     private String updatedBy;
 
-    public EntityChangeTrackerVo() {}
+    public EntityChangeTrackerDto() {}
 
-    public EntityChangeTrackerVo(Long id) { super(id); }
+    public EntityChangeTrackerDto(Long id) { super(id); }
 
     public Instant getCreatedAt() {
         return createdAt;

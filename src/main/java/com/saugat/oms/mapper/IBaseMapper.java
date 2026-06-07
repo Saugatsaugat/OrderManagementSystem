@@ -1,12 +1,12 @@
 package com.saugat.oms.mapper;
 
 import com.saugat.oms.entity.PKEntity;
-import com.saugat.oms.wrapper.PKEntityVo;
+import com.saugat.oms.dto.PKEntityDto;
 import org.mapstruct.InheritInverseConfiguration;
 
 import java.util.List;
 
-public interface IBaseMapper<E extends PKEntity, W extends PKEntityVo> {
+public interface IBaseMapper<E extends PKEntity, W extends PKEntityDto> {
     W toDto(E e);
 
     @InheritInverseConfiguration

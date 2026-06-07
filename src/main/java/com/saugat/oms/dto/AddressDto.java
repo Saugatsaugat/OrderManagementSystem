@@ -1,18 +1,18 @@
-package com.saugat.oms.wrapper;
+package com.saugat.oms.dto;
 
-public class AddressVo extends EntityChangeTrackerVo{
+public class AddressDto extends EntityChangeTrackerDto {
     private String type;
     private String street;
     private String building;
     private String city;
     private String state;
     private String zip;
-    private CountryVo country;
+    private CountryDto country;
 
-    public AddressVo() {
+    public AddressDto() {
     }
 
-    public AddressVo(String type, String street, String building, String city, String state, String zip, CountryVo country) {
+    public AddressDto(String type, String street, String building, String city, String state, String zip, CountryDto country) {
         this.type = type;
         this.street = street;
         this.building = building;
@@ -22,7 +22,7 @@ public class AddressVo extends EntityChangeTrackerVo{
         this.country = country;
     }
 
-    public AddressVo(Long id, String type, String street, String building, String city, String state, String zip, CountryVo country) {
+    public AddressDto(Long id, String type, String street, String building, String city, String state, String zip, CountryDto country) {
         super(id);
         this.type = type;
         this.street = street;
@@ -81,11 +81,11 @@ public class AddressVo extends EntityChangeTrackerVo{
         this.zip = zip;
     }
 
-    public CountryVo getCountry() {
+    public CountryDto getCountry() {
         return country;
     }
 
-    public void setCountry(CountryVo country) {
+    public void setCountry(CountryDto country) {
         this.country = country;
     }
 }

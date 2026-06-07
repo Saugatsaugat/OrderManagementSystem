@@ -4,12 +4,12 @@ import com.saugat.oms.exceptions.ResourceNotFoundException;
 import com.saugat.oms.mapper.IBaseMapper;
 import com.saugat.oms.entity.PKEntity;
 import com.saugat.oms.repository.IBaseRepository;
-import com.saugat.oms.wrapper.PKEntityVo;
+import com.saugat.oms.dto.PKEntityDto;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-public abstract class AbstractService<E extends PKEntity, W extends PKEntityVo, ID> implements IService<W, ID> {
+public abstract class AbstractService<E extends PKEntity, W extends PKEntityDto, ID> implements IService<W, ID> {
 
     public abstract String getServiceName();
 

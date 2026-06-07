@@ -1,21 +1,21 @@
-package com.saugat.oms.wrapper;
+package com.saugat.oms.dto;
 
-public class UserVo extends EntityChangeTrackerVo{
+public class UserDto extends EntityChangeTrackerDto {
 
     private String email;
     private String mobile;
     private String pass;
 
-    public UserVo() {
+    public UserDto() {
     }
 
-    public UserVo(String email, String mobile, String pass) {
+    public UserDto(String email, String mobile, String pass) {
         this.email = email;
         this.mobile = mobile;
         this.pass = pass;
     }
 
-    public UserVo(Long id, String email, String mobile, String pass) {
+    public UserDto(Long id, String email, String mobile, String pass) {
         super(id);
         this.email = email;
         this.mobile = mobile;

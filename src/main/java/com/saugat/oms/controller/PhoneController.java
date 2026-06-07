@@ -1,22 +1,22 @@
 package com.saugat.oms.controller;
 
 import com.saugat.oms.service.IService;
-import com.saugat.oms.wrapper.PhoneVo;
+import com.saugat.oms.dto.PhoneDto;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/v1/phone")
-public class PhoneController extends AbstractController<PhoneVo, Long> {
+public class PhoneController extends AbstractController<PhoneDto, Long> {
 
-    private final IService<PhoneVo, Long> service;
+    private final IService<PhoneDto, Long> service;
 
-    public PhoneController(IService<PhoneVo, Long> service) {
+    public PhoneController(IService<PhoneDto, Long> service) {
         this.service = service;
     }
 
     @Override
-    protected IService<PhoneVo, Long> getService() {
+    protected IService<PhoneDto, Long> getService() {
         return service;
     }
 

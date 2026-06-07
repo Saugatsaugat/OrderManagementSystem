@@ -1,9 +1,9 @@
 package com.saugat.oms.controller;
 
 import com.saugat.oms.service.IService;
-import com.saugat.oms.wrapper.PKEntityVo;
-import com.saugat.oms.wrapper.api.APIErrorResponse;
-import com.saugat.oms.wrapper.api.APIResponse;
+import com.saugat.oms.dto.PKEntityDto;
+import com.saugat.oms.dto.api.APIErrorResponse;
+import com.saugat.oms.dto.api.APIResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -22,7 +22,7 @@ import java.util.List;
         name = "REST API Documentation",
         description = "CRUD Operations for REST API"
 )
-public abstract class AbstractController<W extends PKEntityVo, ID> {
+public abstract class AbstractController<W extends PKEntityDto, ID> {
 
     protected abstract IService<W, ID> getService();
 
