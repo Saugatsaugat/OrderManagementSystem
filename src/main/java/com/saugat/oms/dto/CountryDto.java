@@ -1,20 +1,20 @@
-package com.saugat.oms.wrapper;
+package com.saugat.oms.dto;
 
-public class CountryVo extends EntityChangeTrackerVo {
+public class CountryDto extends EntityChangeTrackerDto {
 
     private String code;
     private String name;
 
-    public CountryVo() {
+    public CountryDto() {
     }
 
-    public CountryVo(String code, String name) {
+    public CountryDto(String code, String name) {
         this.code = code;
         this.name = name;
     }
 
-    public CountryVo(Long id, String code, String name) {
-        this.setId(id);
+    public CountryDto(Long id, String code, String name) {
+        super(id);
         this.code = code;
         this.name = name;
     }

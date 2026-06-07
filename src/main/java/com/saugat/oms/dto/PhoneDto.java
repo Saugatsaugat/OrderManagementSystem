@@ -1,16 +1,16 @@
-package com.saugat.oms.wrapper;
+package com.saugat.oms.dto;
 
-public class PhoneVo extends EntityChangeTrackerVo{
+public class PhoneDto extends EntityChangeTrackerDto {
     private String type;
     private String countryCode;
     private String number;
     private Boolean isVerified = false;
     private Boolean isActive = false;
 
-    public PhoneVo() {
+    public PhoneDto() {
     }
 
-    public PhoneVo(String type, String countryCode, String number, Boolean isVerified, Boolean isActive) {
+    public PhoneDto(String type, String countryCode, String number, Boolean isVerified, Boolean isActive) {
         this.type = type;
         this.countryCode = countryCode;
         this.number = number;
@@ -18,8 +18,8 @@ public class PhoneVo extends EntityChangeTrackerVo{
         this.isActive = isActive;
     }
 
-    public PhoneVo(Long id, String type, String countryCode, String number, Boolean isVerified, Boolean isActive) {
-        this.setId(id);
+    public PhoneDto(Long id, String type, String countryCode, String number, Boolean isVerified, Boolean isActive) {
+        super(id);
         this.type = type;
         this.countryCode = countryCode;
         this.number = number;

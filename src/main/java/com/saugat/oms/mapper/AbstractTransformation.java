@@ -1,7 +1,7 @@
 package com.saugat.oms.mapper;
 
 import com.saugat.oms.entity.User;
-import com.saugat.oms.wrapper.UserVo;
+import com.saugat.oms.dto.UserDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.Named;
 
@@ -9,7 +9,7 @@ import org.mapstruct.Named;
 public abstract class AbstractTransformation {
 
     @Named("userTransformation")
-    public UserVo userTransformation(User user){
-        return user == null ? null : new UserVo(user.getId(), null, null, null);
+    public UserDto userTransformation(User user){
+        return user == null ? null : new UserDto(user.getId(), null, null, null);
     }
 }

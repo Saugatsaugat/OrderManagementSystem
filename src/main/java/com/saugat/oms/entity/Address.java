@@ -41,7 +41,7 @@ public class Address extends EntityChangeTracker{
         this.country = country;
     }
     public Address(Long id, String type, String street, String building, String city, String state, String zip, Country country) {
-        super.setId(id);
+        super(id);
         this.type = type;
         this.street = street;
         this.building = building;

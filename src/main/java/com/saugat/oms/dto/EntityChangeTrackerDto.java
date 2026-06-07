@@ -1,27 +1,32 @@
-package com.saugat.oms.wrapper;
+package com.saugat.oms.dto;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
 
-public class EntityChangeTrackerVo extends PKEntityVo {
+public class EntityChangeTrackerDto extends PKEntityDto {
+    private static final long serialVersionUID = 1L;
 
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
+    private Instant createdAt;
+    private Instant updatedAt;
     private String createdBy;
     private String updatedBy;
 
-    public LocalDateTime getCreatedAt() {
+    public EntityChangeTrackerDto() {}
+
+    public EntityChangeTrackerDto(Long id) { super(id); }
+
+    public Instant getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
+    public void setCreatedAt(Instant createdAt) {
         this.createdAt = createdAt;
     }
 
-    public LocalDateTime getUpdatedAt() {
+    public Instant getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(LocalDateTime updatedAt) {
+    public void setUpdatedAt(Instant updatedAt) {
         this.updatedAt = updatedAt;
     }
 

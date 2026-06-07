@@ -1,6 +1,6 @@
 package com.saugat.oms.exceptions;
 
-import com.saugat.oms.wrapper.api.APIErrorResponse;
+import com.saugat.oms.dto.api.APIErrorResponse;
 import jakarta.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -3,16 +3,16 @@ package com.saugat.oms.service;
 import com.saugat.oms.entity.Address;
 import com.saugat.oms.mapper.IBaseMapper;
 import com.saugat.oms.repository.IBaseRepository;
-import com.saugat.oms.wrapper.AddressVo;
+import com.saugat.oms.dto.AddressDto;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AddressService extends AbstractService<Address, AddressVo, Long> {
+public class AddressService extends AbstractService<Address, AddressDto, Long> {
 
     private final IBaseRepository<Address, Long> repo;
-    private final IBaseMapper<Address, AddressVo> mapper;
+    private final IBaseMapper<Address, AddressDto> mapper;
 
-    public AddressService(IBaseRepository<Address, Long> repo, IBaseMapper<Address, AddressVo> mapper) {
+    public AddressService(IBaseRepository<Address, Long> repo, IBaseMapper<Address, AddressDto> mapper) {
         this.repo = repo;
         this.mapper = mapper;
     }
@@ -28,7 +28,7 @@ public class AddressService extends AbstractService<Address, AddressVo, Long> {
     }
 
     @Override
-    public IBaseMapper<Address, AddressVo> getMapper() {
+    public IBaseMapper<Address, AddressDto> getMapper() {
         return mapper;
     }
 }

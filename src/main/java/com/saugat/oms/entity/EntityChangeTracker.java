@@ -22,6 +22,12 @@ public class EntityChangeTracker extends PKEntity {
     @Column(name = "updated_by")
     private String updatedBy;
 
+    public EntityChangeTracker(){}
+
+    public EntityChangeTracker(Long id){
+        super(id);
+    }
+
     public Instant getCreatedAt() {
         return createdAt;
     }

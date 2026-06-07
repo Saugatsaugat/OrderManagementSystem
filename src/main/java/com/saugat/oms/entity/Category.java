@@ -5,23 +5,23 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "country")
-public class Country extends EntityChangeTracker{
-    @Column(name = "code", unique = true, nullable = false)
+@Table(name = "category")
+public class Category extends EntityChangeTracker{
+    @Column(name = "code", nullable = false)
     private String code;
 
-    @Column(name = "name", unique = true, nullable = false)
+    @Column(name = "name", nullable = false)
     private String name;
 
-    public Country() {
+    public Category() {
     }
 
-    public Country(String code, String name) {
+    public Category(String code, String name) {
         this.code = code;
         this.name = name;
     }
 
-    public Country(Long id, String code, String name) {
+    public Category(Long id, String code, String name) {
         super(id);
         this.code = code;
         this.name = name;

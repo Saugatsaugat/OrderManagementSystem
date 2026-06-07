@@ -1,26 +1,26 @@
 package com.saugat.oms.controller;
 
+import com.saugat.oms.dto.CategoryDto;
 import com.saugat.oms.service.IService;
-import com.saugat.oms.dto.AddressDto;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/v1/address")
-public class AddressController extends AbstractController<AddressDto, Long> {
-    private final IService<AddressDto, Long> service;
+@RequestMapping("/api/v1/category")
+public class CategoryController extends AbstractController<CategoryDto, Long>{
+    private final IService<CategoryDto, Long> service;
 
-    public AddressController(IService<AddressDto, Long> service) {
+    public CategoryController(IService<CategoryDto, Long> service) {
         this.service = service;
     }
 
     @Override
-    protected IService<AddressDto, Long> getService() {
+    protected IService<CategoryDto, Long> getService() {
         return service;
     }
 
     @Override
     protected String getResourceName() {
-        return "Address";
+        return "Category";
     }
 }
