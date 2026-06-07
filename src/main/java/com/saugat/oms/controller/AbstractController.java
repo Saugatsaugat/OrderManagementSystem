@@ -44,8 +44,8 @@ public abstract class AbstractController<W extends PKEntityDto, ID> {
     }
 
     @Operation(
-            summary = "Create Rest API",
-            description = "REST API to create the data"
+            summary = "Get Rest API",
+            description = "REST API to read the data"
     )
     @ApiResponses({
             @ApiResponse(responseCode = "200", description = "Data fetch successful"),
@@ -63,7 +63,7 @@ public abstract class AbstractController<W extends PKEntityDto, ID> {
         log.info("{}_Read_Request for id={}", getResourceName(), id);
         W data = getService().get(id);
         log.info("{}_Read_Success for id={}", getResourceName(), id);
-        return ResponseEntity.ok(APIResponse.success(getResourceName() + "fetched successfully", data));
+        return ResponseEntity.ok(APIResponse.success(getResourceName() + " fetched successfully", data));
     }
 
     @Operation(
@@ -71,7 +71,7 @@ public abstract class AbstractController<W extends PKEntityDto, ID> {
             description = "REST API to read the datalist"
     )
     @ApiResponses({
-            @ApiResponse(responseCode = "201", description = "Datalist fetched successful"),
+            @ApiResponse(responseCode = "200", description = "Datalist fetched successful"),
             @ApiResponse(responseCode = "400", description = "Resource Not Found",
                     content = @Content(schema = @Schema(implementation = APIErrorResponse.class))),
             @ApiResponse(responseCode = "500", description = "Internal Server Error",
@@ -92,7 +92,7 @@ public abstract class AbstractController<W extends PKEntityDto, ID> {
             description = "REST API to create the data"
     )
     @ApiResponses({
-            @ApiResponse(responseCode = "200", description = "Data created successful"),
+            @ApiResponse(responseCode = "201", description = "Data created successful"),
             @ApiResponse(responseCode = "400", description = "Resource Not Found",
                     content = @Content(schema = @Schema(implementation = APIErrorResponse.class))),
             @ApiResponse(responseCode = "500", description = "Internal Server Error",
@@ -136,7 +136,7 @@ public abstract class AbstractController<W extends PKEntityDto, ID> {
             description = "REST API to delete the data"
     )
     @ApiResponses({
-            @ApiResponse(responseCode = "203", description = "Data deleted successful"),
+            @ApiResponse(responseCode = "204", description = "Data deleted successful"),
             @ApiResponse(responseCode = "400", description = "Resource Not Found",
                     content = @Content(schema = @Schema(implementation = APIErrorResponse.class))),
             @ApiResponse(responseCode = "500", description = "Internal Server Error",
