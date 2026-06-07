@@ -29,7 +29,7 @@ public class User extends EntityChangeTracker {
     }
 
     public User(Long id, String email, String mobile, String pass) {
-        super.setId(id);
+        super(id);
         this.email = email;
         this.mobile = mobile;
         this.pass = pass;

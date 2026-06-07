@@ -14,6 +14,12 @@ public class PKEntity {
     @Column(name = "id")
     private Long id;
 
+    public PKEntity() {}
+
+    public PKEntity(Long id){
+        this.id = id;
+    }
+
     public Long getId() {
         return id;
     }
