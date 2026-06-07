@@ -31,18 +31,23 @@ public class UserDetail extends EntityChangeTracker{
     @NotNull(message = "User cannot be null.")
     private User user;
 
+    @OneToOne
+    @JoinColumn(name = "address_id")
+    private Address address;
+
     public UserDetail(){}
 
-    public UserDetail(String firstname, String midname, String lastname, String dob, String sex, User user) {
+    public UserDetail(String firstname, String midname, String lastname, String dob, String sex, User user, Address address) {
         this.firstname = firstname;
         this.midname = midname;
         this.lastname = lastname;
         this.dob = dob;
         this.sex = sex;
         this.user = user;
+        this.address = address;
     }
 
-    public UserDetail(Long id, String firstname, String midname, String lastname, String dob, String sex, User user) {
+    public UserDetail(Long id, String firstname, String midname, String lastname, String dob, String sex, User user, Address address) {
         super(id);
         this.firstname = firstname;
         this.midname = midname;
@@ -50,6 +55,7 @@ public class UserDetail extends EntityChangeTracker{
         this.dob = dob;
         this.sex = sex;
         this.user = user;
+        this.address= address;
     }
 
     public String getFirstname() {
@@ -98,5 +104,13 @@ public class UserDetail extends EntityChangeTracker{
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 }

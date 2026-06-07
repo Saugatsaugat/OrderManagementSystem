@@ -8,19 +8,21 @@ public class UserDetailDto extends EntityChangeTrackerDto {
     private String dob;
     private String sex;
     private UserDto user;
+    private AddressDto address;
 
     public UserDetailDto() {}
 
-    public UserDetailDto(String firstname, String midname, String lastname, String dob, String sex, UserDto user) {
+    public UserDetailDto(String firstname, String midname, String lastname, String dob, String sex, UserDto user, AddressDto address) {
         this.firstname = firstname;
         this.midname = midname;
         this.lastname = lastname;
         this.dob = dob;
         this.sex = sex;
         this.user = user;
+        this.address = address;
     }
 
-    public UserDetailDto(Long id, String firstname, String midname, String lastname, String dob, String sex, UserDto user) {
+    public UserDetailDto(Long id, String firstname, String midname, String lastname, String dob, String sex, UserDto user, AddressDto address) {
         super(id);
         this.firstname = firstname;
         this.midname = midname;
@@ -28,6 +30,7 @@ public class UserDetailDto extends EntityChangeTrackerDto {
         this.dob = dob;
         this.sex = sex;
         this.user = user;
+        this.address = address;
     }
 
     public String getFirstname() {
@@ -76,5 +79,13 @@ public class UserDetailDto extends EntityChangeTrackerDto {
 
     public void setUser(UserDto user) {
         this.user = user;
+    }
+
+    public AddressDto getAddress() {
+        return address;
+    }
+
+    public void setAddress(AddressDto address) {
+        this.address = address;
     }
 }
