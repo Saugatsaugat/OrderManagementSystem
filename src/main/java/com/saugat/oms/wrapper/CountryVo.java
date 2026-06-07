@@ -14,7 +14,7 @@ public class CountryVo extends EntityChangeTrackerVo {
     }
 
     public CountryVo(Long id, String code, String name) {
-        this.setId(id);
+        super(id);
         this.code = code;
         this.name = name;
     }

@@ -19,7 +19,7 @@ public class PhoneVo extends EntityChangeTrackerVo{
     }
 
     public PhoneVo(Long id, String type, String countryCode, String number, Boolean isVerified, Boolean isActive) {
-        this.setId(id);
+        super(id);
         this.type = type;
         this.countryCode = countryCode;
         this.number = number;

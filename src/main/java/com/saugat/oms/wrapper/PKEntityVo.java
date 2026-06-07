@@ -8,6 +8,13 @@ public class PKEntityVo implements Serializable {
 
     private Long id;
 
+    public PKEntityVo() {
+    }
+
+    public PKEntityVo(Long id) {
+        this.id = id;
+    }
+
     public Long getId() {
         return id;
     }

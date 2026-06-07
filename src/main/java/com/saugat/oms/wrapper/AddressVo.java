@@ -23,7 +23,7 @@ public class AddressVo extends EntityChangeTrackerVo{
     }
 
     public AddressVo(Long id, String type, String street, String building, String city, String state, String zip, CountryVo country) {
-        this.setId(id);
+        super(id);
         this.type = type;
         this.street = street;
         this.building = building;

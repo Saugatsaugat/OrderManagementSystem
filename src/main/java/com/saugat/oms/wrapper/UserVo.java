@@ -16,7 +16,7 @@ public class UserVo extends EntityChangeTrackerVo{
     }
 
     public UserVo(Long id, String email, String mobile, String pass) {
-        super.setId(id);
+        super(id);
         this.email = email;
         this.mobile = mobile;
         this.pass = pass;
