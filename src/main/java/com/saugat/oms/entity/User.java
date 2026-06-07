@@ -28,6 +28,13 @@ public class User extends EntityChangeTracker {
         this.pass = pass;
     }
 
+    public User(Long id, String email, String mobile, String pass) {
+        super.setId(id);
+        this.email = email;
+        this.mobile = mobile;
+        this.pass = pass;
+    }
+
     public String getEmail() {
         return email;
     }

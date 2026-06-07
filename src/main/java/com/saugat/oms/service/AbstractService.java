@@ -3,7 +3,7 @@ package com.saugat.oms.service;
 import com.saugat.oms.exceptions.ResourceNotFoundException;
 import com.saugat.oms.mapper.IBaseMapper;
 import com.saugat.oms.entity.PKEntity;
-import com.saugat.oms.repo.IBaseRepo;
+import com.saugat.oms.repository.IBaseRepository;
 import com.saugat.oms.wrapper.PKEntityVo;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,7 +13,7 @@ public abstract class AbstractService<E extends PKEntity, W extends PKEntityVo, 
 
     public abstract String getServiceName();
 
-    public abstract IBaseRepo<E, ID> getRepository();
+    public abstract IBaseRepository<E, ID> getRepository();
 
     public abstract IBaseMapper<E, W> getMapper();
 

@@ -2,19 +2,19 @@ package com.saugat.oms.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;
-import jakarta.persistence.PostUpdate;
 import jakarta.persistence.PrePersist;
+import jakarta.persistence.PreUpdate;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
 
 @MappedSuperclass
 public class EntityChangeTracker extends PKEntity {
 
     @Column(name = "created_at")
-    private LocalDateTime createdAt;
+    private Instant createdAt;
 
     @Column(name = "updated_at")
-    private LocalDateTime updatedAt;
+    private Instant updatedAt;
 
     @Column(name = "created_by")
     private String createdBy;
@@ -22,19 +22,19 @@ public class EntityChangeTracker extends PKEntity {
     @Column(name = "updated_by")
     private String updatedBy;
 
-    public LocalDateTime getCreatedAt() {
+    public Instant getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
+    public void setCreatedAt(Instant createdAt) {
         this.createdAt = createdAt;
     }
 
-    public LocalDateTime getUpdatedAt() {
+    public Instant getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(LocalDateTime updatedAt) {
+    public void setUpdatedAt(Instant updatedAt) {
         this.updatedAt = updatedAt;
     }
 
@@ -56,12 +56,13 @@ public class EntityChangeTracker extends PKEntity {
 
     @PrePersist
     public void prePersist(){
-
-        this.createdAt = LocalDateTime.now();
+        if(this.createdAt == null){
+            this.createdAt = Instant.now();
+        }
     }
 
-    @PostUpdate
+    @PreUpdate
     public void postPersist(){
-        this.updatedAt = LocalDateTime.now();
+        this.updatedAt = Instant.now();
     }
 }

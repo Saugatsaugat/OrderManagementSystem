@@ -1,32 +1,16 @@
-package com.saugat.oms.entity;
+package com.saugat.oms.wrapper;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-
-@Entity
-@Table(name = "phone")
-public class Phone extends EntityChangeTracker{
-
-    @Column(name = "type", nullable = false)
+public class PhoneVo extends EntityChangeTrackerVo{
     private String type;
-
-    @Column(name = "country_code", nullable = false, unique = true)
     private String countryCode;
-
-    @Column(name = "number", nullable = false)
     private String number;
-
-    @Column(name = "is_verified", nullable = false)
     private Boolean isVerified = false;
-
-    @Column(name = "is_active", nullable = false)
     private Boolean isActive = false;
 
-    public Phone() {
+    public PhoneVo() {
     }
 
-    public Phone(String type, String countryCode, String number, Boolean isVerified, Boolean isActive) {
+    public PhoneVo(String type, String countryCode, String number, Boolean isVerified, Boolean isActive) {
         this.type = type;
         this.countryCode = countryCode;
         this.number = number;
@@ -34,8 +18,8 @@ public class Phone extends EntityChangeTracker{
         this.isActive = isActive;
     }
 
-    public Phone(Long id, String type, String countryCode, String number, Boolean isVerified, Boolean isActive) {
-        super.setId(id);
+    public PhoneVo(Long id, String type, String countryCode, String number, Boolean isVerified, Boolean isActive) {
+        this.setId(id);
         this.type = type;
         this.countryCode = countryCode;
         this.number = number;
