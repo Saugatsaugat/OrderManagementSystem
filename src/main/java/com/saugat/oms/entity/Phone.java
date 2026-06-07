@@ -35,7 +35,7 @@ public class Phone extends EntityChangeTracker{
     }
 
     public Phone(Long id, String type, String countryCode, String number, Boolean isVerified, Boolean isActive) {
-        this.setId(id);
+        super.setId(id);
         this.type = type;
         this.countryCode = countryCode;
         this.number = number;

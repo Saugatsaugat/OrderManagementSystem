@@ -22,7 +22,7 @@ public class Country extends EntityChangeTracker{
     }
 
     public Country(Long id, String code, String name) {
-        this.setId(id);
+        super.setId(id);
         this.code = code;
         this.name = name;
     }
