@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "user_phone")
+@Table(name = "user_phone", uniqueConstraints = {@UniqueConstraint(columnNames = {"user_id", "phone_id"})})
 public class UserPhone extends EntityChangeTracker{
 
     @ManyToOne
