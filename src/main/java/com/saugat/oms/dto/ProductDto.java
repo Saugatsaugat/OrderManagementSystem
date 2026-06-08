@@ -7,13 +7,13 @@ public class ProductDto extends EntityChangeTrackerDto{
     private String name;
     private String code;
     private BigDecimal price;
-    private float stock;
+    private Float stock;
     private List<CategoryDto> categories;
     private SellerDto seller;
 
     public ProductDto() {}
 
-    public ProductDto(String name, String code, BigDecimal price, float stock, List<CategoryDto> categories, SellerDto seller) {
+    public ProductDto(String name, String code, BigDecimal price, Float stock, List<CategoryDto> categories, SellerDto seller) {
         this.name = name;
         this.code = code;
         this.price = price;
@@ -22,7 +22,7 @@ public class ProductDto extends EntityChangeTrackerDto{
         this.seller = seller;
     }
 
-    public ProductDto(Long id, String name, String code, BigDecimal price, float stock, List<CategoryDto> categories, SellerDto seller) {
+    public ProductDto(Long id, String name, String code, BigDecimal price, Float stock, List<CategoryDto> categories, SellerDto seller) {
         super(id);
         this.name = name;
         this.code = code;
@@ -56,11 +56,11 @@ public class ProductDto extends EntityChangeTrackerDto{
         this.price = price;
     }
 
-    public float getStock() {
+    public Float getStock() {
         return stock;
     }
 
-    public void setStock(float stock) {
+    public void setStock(Float stock) {
         this.stock = stock;
     }
 

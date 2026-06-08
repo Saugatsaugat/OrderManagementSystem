@@ -22,7 +22,7 @@ public class Product extends EntityChangeTracker{
     private BigDecimal price= new BigDecimal(0);
 
     @Column(name = "stock")
-    private float stock = 0f;
+    private Float stock = 0f;
 
     @OneToMany
     @JoinColumn(name = "categories")
@@ -36,7 +36,7 @@ public class Product extends EntityChangeTracker{
 
     public Product() {}
 
-    public Product(String name, String code, BigDecimal price, float stock, List<Category> categories, Seller seller) {
+    public Product(String name, String code, BigDecimal price, Float stock, List<Category> categories, Seller seller) {
         this.name = name;
         this.code = code;
         this.price = price;
@@ -45,7 +45,7 @@ public class Product extends EntityChangeTracker{
         this.seller = seller;
     }
 
-    public Product(Long id, String name, String code, BigDecimal price, float stock, List<Category> categories, Seller seller) {
+    public Product(Long id, String name, String code, BigDecimal price, Float stock, List<Category> categories, Seller seller) {
         super(id);
         this.name = name;
         this.code = code;
@@ -79,11 +79,11 @@ public class Product extends EntityChangeTracker{
         this.price = price;
     }
 
-    public float getStock() {
+    public Float getStock() {
         return stock;
     }
 
-    public void setStock(float stock) {
+    public void setStock(Float stock) {
         this.stock = stock;
     }
 
