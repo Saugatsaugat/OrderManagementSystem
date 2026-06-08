@@ -1,6 +1,6 @@
 package com.saugat.oms.repository;
 
-import com.saugat.oms.controller.SellerDetail;
+import com.saugat.oms.entity.SellerDetail;
 import org.springframework.stereotype.Repository;
 
 @Repository

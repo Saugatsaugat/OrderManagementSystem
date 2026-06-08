@@ -1,7 +1,5 @@
-package com.saugat.oms.controller;
+package com.saugat.oms.entity;
 
-import com.saugat.oms.entity.EntityChangeTracker;
-import com.saugat.oms.entity.Seller;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 
@@ -19,17 +17,23 @@ public class SellerDetail extends EntityChangeTracker {
     @NotNull(message = "Seller cannot be null.")
     private Seller seller;
 
+    @OneToOne
+    @JoinColumn(name = "address_id")
+    private Address address;
+
     public SellerDetail() {}
 
-    public SellerDetail(LocalDateTime registeredOn, Seller seller) {
+    public SellerDetail(LocalDateTime registeredOn, Seller seller, Address address) {
         this.registeredOn = registeredOn;
         this.seller = seller;
+        this.address = address;
     }
 
-    public SellerDetail(Long id, LocalDateTime registeredOn, Seller seller) {
+    public SellerDetail(Long id, LocalDateTime registeredOn, Seller seller, Address address) {
         super(id);
         this.registeredOn = registeredOn;
         this.seller = seller;
+        this.address = address;
     }
 
     public LocalDateTime getRegisteredOn() {
@@ -46,5 +50,13 @@ public class SellerDetail extends EntityChangeTracker {
 
     public void setSeller(Seller seller) {
         this.seller = seller;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 }

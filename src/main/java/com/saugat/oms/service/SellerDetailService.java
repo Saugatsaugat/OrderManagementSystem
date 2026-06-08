@@ -1,6 +1,6 @@
 package com.saugat.oms.service;
 
-import com.saugat.oms.controller.SellerDetail;
+import com.saugat.oms.entity.SellerDetail;
 import com.saugat.oms.dto.SellerDetailDto;
 import com.saugat.oms.mapper.IBaseMapper;
 import com.saugat.oms.repository.IBaseRepository;

@@ -6,18 +6,22 @@ public class SellerDetailDto extends EntityChangeTrackerDto{
 
     private LocalDateTime registeredOn;
     private SellerDto seller;
+    private AddressDto address;
+
 
     public SellerDetailDto() {}
 
-    public SellerDetailDto(LocalDateTime registeredOn, SellerDto seller) {
+    public SellerDetailDto(LocalDateTime registeredOn, SellerDto seller, AddressDto address) {
         this.registeredOn = registeredOn;
         this.seller = seller;
+        this.address = address;
     }
 
-    public SellerDetailDto(Long id, LocalDateTime registeredOn, SellerDto seller) {
+    public SellerDetailDto(Long id, LocalDateTime registeredOn, SellerDto seller, AddressDto address) {
         super(id);
         this.registeredOn = registeredOn;
         this.seller = seller;
+        this.address = address;
     }
 
     public LocalDateTime getRegisteredOn() {
@@ -34,5 +38,13 @@ public class SellerDetailDto extends EntityChangeTrackerDto{
 
     public void setSeller(SellerDto seller) {
         this.seller = seller;
+    }
+
+    public AddressDto getAddress() {
+        return address;
+    }
+
+    public void setAddress(AddressDto address) {
+        this.address = address;
     }
 }

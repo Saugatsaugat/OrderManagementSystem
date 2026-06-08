@@ -1,6 +1,6 @@
 package com.saugat.oms.mapper;
 
-import com.saugat.oms.controller.SellerDetail;
+import com.saugat.oms.entity.SellerDetail;
 import com.saugat.oms.dto.SellerDetailDto;
 import org.mapstruct.Mapper;
 
