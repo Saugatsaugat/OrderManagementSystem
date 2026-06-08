@@ -5,5 +5,5 @@ import com.saugat.oms.dto.CountryDto;
 import org.mapstruct.Mapper;
 
 @Mapper(config = IMapperConfig.class, uses = {})
-public interface CountryMapper extends IBaseMapper<Country, CountryDto> {
+public abstract class CountryMapper implements IBaseMapper<Country, CountryDto> {
 }
