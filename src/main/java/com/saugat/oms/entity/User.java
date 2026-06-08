@@ -12,27 +12,37 @@ public class User extends EntityChangeTracker {
     @Email(message = "Invalid email format")
     private String email;
 
-    @Column(name = "mobile", unique = true)
-    private String mobile;
-
-    @Column(name = "pass", nullable = false)
+    @Column(name = "hash", nullable = false)
     @NotNull(message = "Password is required")
-    private String pass;
+    private String hash;
+
+    @Column(name = "salt")
+    private String salt;
+
+    @Column(name = "status", nullable = false)
+    private String status = "ACTIVE";
+
+    @Column(name = "type", nullable = false)
+    private String type = "USER";
 
     public User() {
     }
 
-    public User(String email, String mobile, String pass) {
+    public User(String email, String hash, String salt, String status, String type) {
         this.email = email;
-        this.mobile = mobile;
-        this.pass = pass;
+        this.hash = hash;
+        this.salt = salt;
+        this.status = status;
+        this.type = type;
     }
 
-    public User(Long id, String email, String mobile, String pass) {
+    public User(Long id, String email, String hash, String salt, String status, String type) {
         super(id);
         this.email = email;
-        this.mobile = mobile;
-        this.pass = pass;
+        this.hash = hash;
+        this.salt = salt;
+        this.status = status;
+        this.type = type;
     }
 
     public String getEmail() {
@@ -43,20 +53,35 @@ public class User extends EntityChangeTracker {
         this.email = email;
     }
 
-    public String getMobile() {
-        return mobile;
+    public String getHash() {
+        return hash;
     }
 
-    public void setMobile(String mobile) {
-        this.mobile = mobile;
+    public void setHash(String hash) {
+        this.hash = hash;
     }
 
-    public String getPass() {
-        return pass;
+    public String getSalt() {
+        return salt;
     }
 
-    public void setPass(String pass) {
-        this.pass = pass;
+    public void setSalt(String salt) {
+        this.salt = salt;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 }

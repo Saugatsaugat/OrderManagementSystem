@@ -3,23 +3,29 @@ package com.saugat.oms.dto;
 public class UserDto extends EntityChangeTrackerDto {
 
     private String email;
-    private String mobile;
-    private String pass;
+    private String hash;
+    private String salt;
+    private String status;
+    private String type;
 
     public UserDto() {
     }
 
-    public UserDto(String email, String mobile, String pass) {
+    public UserDto(String email, String hash, String salt, String status, String type) {
         this.email = email;
-        this.mobile = mobile;
-        this.pass = pass;
+        this.hash = hash;
+        this.salt = salt;
+        this.status = status;
+        this.type = type;
     }
 
-    public UserDto(Long id, String email, String mobile, String pass) {
+    public UserDto(Long id, String email, String hash, String salt, String status, String type) {
         super(id);
         this.email = email;
-        this.mobile = mobile;
-        this.pass = pass;
+        this.hash = hash;
+        this.salt = salt;
+        this.status = status;
+        this.type = type;
     }
 
     public String getEmail() {
@@ -30,19 +36,35 @@ public class UserDto extends EntityChangeTrackerDto {
         this.email = email;
     }
 
-    public String getMobile() {
-        return mobile;
+    public String getHash() {
+        return hash;
     }
 
-    public void setMobile(String mobile) {
-        this.mobile = mobile;
+    public void setHash(String hash) {
+        this.hash = hash;
     }
 
-    public String getPass() {
-        return pass;
+    public String getSalt() {
+        return salt;
     }
 
-    public void setPass(String pass) {
-        this.pass = pass;
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }
